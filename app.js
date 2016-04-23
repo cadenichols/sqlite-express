@@ -14,8 +14,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
 
+app.set('view engine', 'hbs');
+
 app.get('/', (req, res) => {
-  res.send('home page\n');
+  res.render('home', { color: 'blue'});
 });
 
 app.get('/clogs', (req,res) => {
